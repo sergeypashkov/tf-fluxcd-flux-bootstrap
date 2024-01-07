@@ -3,10 +3,10 @@ provider "flux" {
     config_path = var.config_path
   }
   git = {
-    url = "https://github.com/${var.github_repository}.git"
-    http = {
+    url = "ssh://github.com/${var.github_repository}.git"
+    ssh = {
       username = "git"
-      password = var.github_token
+      private_key = var.private_key
     }
   }
 }
